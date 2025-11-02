@@ -1,0 +1,442 @@
+/* West LA EV Life - Custom Styles */
+
+/* Smooth Transitions */
+* {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #004AAD;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #003580;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+}
+
+/* Hero Section Enhancements */
+#hero {
+    position: relative;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 74, 173, 0.8) 0%, rgba(22, 163, 74, 0.6) 100%);
+    z-index: 1;
+}
+
+/* Floating Animation for Scroll Indicator */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce {
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Card Hover Effects */
+.hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient Text */
+.bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* Button Hover Effects */
+button, a {
+    cursor: pointer;
+}
+
+button:active, a:active {
+    transform: scale(0.98);
+}
+
+/* Form Input Focus States */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #004AAD;
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+}
+
+.dark input:focus, .dark select:focus, .dark textarea:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #004AAD;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Mobile Menu Transition */
+#mobile-menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#mobile-menu.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* Section Dividers */
+section {
+    position: relative;
+}
+
+/* Pulse Animation for CTAs */
+@keyframes pulse-subtle {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.9;
+    }
+}
+
+.pulse-on-hover:hover {
+    animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Star Rating */
+.star-rating {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Image Placeholder Gradient */
+.image-placeholder {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Premium Badge Glow */
+.premium-badge {
+    position: relative;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(250, 204, 21, 0.8);
+    }
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+}
+
+/* Card Grid Responsive */
+@media (max-width: 768px) {
+    .grid {
+        gap: 1rem;
+    }
+}
+
+/* Navigation Shadow on Scroll */
+nav.scrolled {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Accessibility Improvements */
+*:focus-visible {
+    outline: 2px solid #004AAD;
+    outline-offset: 2px;
+}
+
+.dark *:focus-visible {
+    outline-color: #3b82f6;
+}
+
+/* Skip to Content Link */
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #004AAD;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-to-content:focus {
+    top: 0;
+}
+
+/* Print Styles */
+@media print {
+    nav, footer, #theme-toggle, button {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* Dark Mode Specific Adjustments */
+.dark {
+    color-scheme: dark;
+}
+
+.dark img {
+    opacity: 0.9;
+}
+
+.dark .bg-white {
+    background-color: rgb(17, 24, 39);
+}
+
+/* Backdrop Blur Support */
+@supports (backdrop-filter: blur(10px)) {
+    .backdrop-blur-sm {
+        backdrop-filter: blur(4px);
+    }
+}
+
+/* Selection Colors */
+::selection {
+    background-color: #004AAD;
+    color: white;
+}
+
+.dark ::selection {
+    background-color: #3b82f6;
+    color: white;
+}
+
+/* Enhanced Shadows for Dark Mode */
+.dark .shadow-md {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.dark .shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+}
+
+.dark .shadow-xl {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Calculator Results Animation */
+#calculator-results {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loader for Future API Integrations */
+.loader {
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #004AAD;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+.dark .loader {
+    border-color: #1e293b;
+    border-top-color: #3b82f6;
+}
+
+/* Success/Error Messages */
+.alert {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #6ee7b7;
+}
+
+.dark .alert-success {
+    background-color: rgba(22, 163, 74, 0.2);
+    color: #86efac;
+    border-color: #16a34a;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.dark .alert-error {
+    background-color: rgba(220, 38, 38, 0.2);
+    color: #fca5a5;
+    border-color: #dc2626;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Gradient Borders */
+.gradient-border {
+    position: relative;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #004AAD, #16A34A) border-box;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+}
+
+.dark .gradient-border {
+    background: linear-gradient(rgb(17, 24, 39), rgb(17, 24, 39)) padding-box,
+                linear-gradient(135deg, #3b82f6, #22c55e) border-box;
+}
+
+/* Performance Optimization */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+/* Responsive Video Embeds */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-responsive iframe,
+.video-responsive object,
+.video-responsive embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Checkbox/Radio Styles */
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #004AAD;
+}
+
+.dark input[type="checkbox"],
+.dark input[type="radio"] {
+    accent-color: #3b82f6;
+}

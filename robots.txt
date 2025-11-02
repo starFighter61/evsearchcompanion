@@ -1,0 +1,15 @@
+# West LA EV Life - Robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://westsideevs.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1
+
+# Block access to specific directories (if needed in future)
+# Disallow: /admin/
+# Disallow: /private/
