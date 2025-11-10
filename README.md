@@ -470,7 +470,7 @@ west-la-ev-life/
 ## 📞 Contact & Support
 
 **Project Maintainer**: West LA EV Life Team  
-**Email**: support@westlacomputerexpert.tech  
+**Email**: support@westsideevs.com  
 **Phone**: (310) 850-8093  
 **Location**: Santa Monica, CA 90401
 
@@ -480,7 +480,7 @@ west-la-ev-life/
 
 © 2025 West LA EV Life. All rights reserved.
 
-This project is proprietary. For partnership inquiries, contact support@westlacomputerexpert.tech.
+This project is proprietary. For partnership inquiries, contact support@westsideevs.com.
 
 ---
 
